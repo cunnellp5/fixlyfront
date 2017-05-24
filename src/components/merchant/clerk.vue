@@ -7,7 +7,10 @@
           <i>menu</i>
         </button>
         <q-toolbar-title :padding="1">
-            <h3 v-link.replace=" '/' ">
+            <h3 v-link.replace=" '/' " class="gt-md">
+              Fixly Store
+            </h3>
+            <h3 v-link.replace=" '/' " class="lt-md md text-center">
               Fixly Store
             </h3>
         </q-toolbar-title>
@@ -24,7 +27,7 @@
       </q-tabs>
 
       <!-- Left-side Drawer -->
-      <q-drawer ref="leftDrawer">
+      <q-drawer ref="leftDrawer" v-touch-swipe="handler">
         <div class="toolbar light">
           <q-toolbar-title :padding="1">
               Drawer
@@ -51,9 +54,9 @@
       <!-- IF USING subRoutes only: -->
       <router-view class="layout-view"> help</router-view>
       <!-- OR ELSE, IF NOT USING subRoutes: -->
-      <div class="layout-view"></div>
+      <!-- <div class="layout-view"></div> -->
       <!-- Right-side Drawer -->
-      <q-drawer ref="rightDrawer" right-side>
+      <q-drawer ref="rightDrawer" right-side v-touch-swipe="handler">
         <p class="text-grey-7" style="padding: 25px;">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
