@@ -1,10 +1,30 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
-
-Vue.use(Vuex)
-/* eslint-disable no-new */
-export const store = new Vuex.Store({
-  state: {
-    counter: 0
-  }
-})
+// import Vue from 'vue'
+// import Vuex from 'vuex'
+//
+// Vue.use(Vuex)
+//
+// // const state = {
+// //
+// // }
+// //
+// // export default const new Vuex.Store({
+// //   state
+// // })
+// const state = {
+// }
+//
+// const actions = {
+// }
+//
+// const mutations = {
+// }
+//
+// const getters = {
+// }
+//
+// export default {
+//   state,
+//   mutations,
+//   actions,
+//   getters
+// }

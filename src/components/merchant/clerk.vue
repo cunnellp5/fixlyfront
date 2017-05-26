@@ -21,9 +21,9 @@
       </div>
       <!-- Navigation Tabs -->
       <q-tabs slot="navigation">
-          <q-tab icon="account_circle" route="/bike/profile" exact replace>Profile</q-tab>
-          <q-tab icon="map" route="/bike/map" exact replace>Map</q-tab>
-          <q-tab icon="help" route="/bike/help" exact replace>Help</q-tab>
+          <q-tab icon="account_circle" route="/clerk/profile" exact replace>Profile</q-tab>
+          <q-tab icon="map" route="/clerk/map" exact replace>Map</q-tab>
+          <q-tab icon="help" route="/clerk/help" exact replace>Help</q-tab>
       </q-tabs>
 
       <!-- Left-side Drawer -->
@@ -35,18 +35,18 @@
         </div>
 
         <div class="list no-border platform-delimiter">
-          <q-drawer-link icon="view_quilt" to="/bike/about" exact>
+          <q-drawer-link icon="view_quilt" to="/clerk/about" exact>
             About Layout
           </q-drawer-link>
           <hr>
           <div class="list-label">Info Navigator</div>
-          <q-drawer-link icon="account_circle" to="/bike/profile">
+          <q-drawer-link icon="account_circle" to="/clerk/profile">
             Profile
           </q-drawer-link>
-          <q-drawer-link icon="map" to="/bike/map">
+          <q-drawer-link icon="map" to="/clerk/map">
             Map
           </q-drawer-link>
-          <q-drawer-link icon="help" to="/bike/help">
+          <q-drawer-link icon="help" to="/clerk/help">
             Help
           </q-drawer-link>
         </div>

@@ -35,7 +35,7 @@
         </div>
 
         <div class="list no-border platform-delimiter">
-          <q-drawer-link active="true" icon="view_quilt" to="/bike/about" exact>
+          <q-drawer-link icon="view_quilt" to="/bike/about" exact>
             About Layout
           </q-drawer-link>
           <hr>
