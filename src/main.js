@@ -11,7 +11,7 @@ import Quasar from 'quasar'
 import axios from 'axios'
 import router from './router'
 
-import { store } from './store/store'
+import store from './store/store.js'
 
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(axios)

@@ -1,30 +1,39 @@
-// import Vue from 'vue'
-// import Vuex from 'vuex'
-//
-// Vue.use(Vuex)
-//
-// // const state = {
-// //
-// // }
-// //
-// // export default const new Vuex.Store({
-// //   state
-// // })
-// const state = {
-// }
-//
-// const actions = {
-// }
-//
-// const mutations = {
-// }
-//
-// const getters = {
-// }
-//
-// export default {
-//   state,
-//   mutations,
-//   actions,
-//   getters
-// }
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const state = {
+  myValue: 10
+}
+
+const INCREMENT = 'INCREMENT'
+const DECREMENT = 'DECREMENT'
+
+const mutations = {
+  [INCREMENT] (state) {
+    state.myValue++
+  },
+  [DECREMENT] (state) {
+    state.myValue--
+  }
+}
+
+const actions = {
+  increment (store) {
+    setTimeout(() => {
+      store.commit(INCREMENT)
+    }, 500)
+  },
+  decrement (store) {
+    setTimeout(() => {
+      store.commit(DECREMENT)
+    }, 500)
+  }
+}
+
+export default new Vuex.Store({
+  state,
+  actions,
+  mutations
+})
