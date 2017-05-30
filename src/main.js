@@ -9,12 +9,20 @@ require(`./themes/app.${__THEME}.styl`)
 import Vue from 'vue'
 import Quasar from 'quasar'
 import axios from 'axios'
+const VueGoogleMaps = require('vue2-google-maps')
 import router from './router'
 
 import store from './store/store.js'
 
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(axios)
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyAPWV1sULdua9Vm2W-GtwndQ84aIC9Sgys',
+    v: '3.28',
+    libraries: 'places'
+  }
+})
 
 Quasar.start(() => {
   /* eslint-disable no-new */
