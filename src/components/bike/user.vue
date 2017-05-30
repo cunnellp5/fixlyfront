@@ -4,7 +4,7 @@
       <div slot="header" class="toolbar">
         <!-- opens left-side drawer using its ref -->
         <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-          <i>menu</i>
+          <i>navigate_before</i>
         </button>
         <q-toolbar-title :padding="1">
           <h3 v-link.replace=" '/' " class="gt-md">
@@ -16,7 +16,7 @@
         </q-toolbar-title>
         <!-- opens right-side drawer using its ref -->
         <button class="hide-on-drawer-visible" @click="$refs.rightDrawer.open()">
-            <i>menu</i>
+            <i>navigate_next</i>
           </button>
       </div>
       <!-- Navigation Tabs -->
@@ -36,7 +36,7 @@
 
         <div class="list no-border platform-delimiter">
           <q-drawer-link icon="view_quilt" to="/bike/about" exact>
-            About Layout
+            About fixly
           </q-drawer-link>
           <hr>
           <div class="list-label">Info Navigator</div>
@@ -46,7 +46,7 @@
           <q-drawer-link icon="map" to="/bike/map">
             Map
           </q-drawer-link>
-          <q-drawer-link icon="help" to="/bike/help">
+          <q-drawer-link icon="track_changes" to="/bike/help">
             Help
           </q-drawer-link>
         </div>
@@ -63,8 +63,7 @@
       </q-drawer>
       <!-- Footer -->
       <div slot="footer" class="toolbar">
-        <i>star</i>
-        <i>star</i>
+        &#9400; Fixly
       </div>
   </q-layout>
 </template>

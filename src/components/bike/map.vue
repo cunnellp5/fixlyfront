@@ -41,7 +41,10 @@ export default {
         currentLocation: null
       },
       maps: [],
-      center: { lat: 39.757600, lng: -105.0069376000 },
+      center: {
+        lat: 39.757600,
+        lng: -105.0069376000
+      },
       markers: [{
         position: {}
       }]
@@ -64,14 +67,11 @@ export default {
         this.currentLocationLon = position.coords.longitude
         this.currentLocationLat = position.coords.latitude
         console.log(this.currentLocation)
-        this.center.lat = this.currentLocationLat
-        this.center.lng = this.currentLocationLon
       }.bind(this)) // bind to `this` so it's the current component.
     }
   }
 }
 </script>
-
 
 <style lang="css">
   .map-container {
@@ -79,7 +79,8 @@ export default {
     height: 300px;
   }
   .pad {
-    padding: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .mids {
     display: flex;
