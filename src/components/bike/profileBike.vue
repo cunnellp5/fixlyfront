@@ -24,30 +24,29 @@
         <div class="auto"></div>
       </div>
     </div>
-    <p>Help log</p>
+    <p>History</p>
     <div class="list">
       <q-collapsible
-        icon="explore"
-        label="Help History"
-        v-for="data in helps"> {{ data.description }}
-        <ul>
+        icon="done"
+        :label="data.description"
+        v-for="data in helps">
+        Rescued by:
+        <ul class="bg">
+          <em><li>Phil</li></em>
+        </ul>
+        Date:
+        <ul class="bg">
           <li>
-            {{ data.day }}
+            <em>{{ data.day }}</em>
           </li>
           <li>
-            {{ data.time }}
+            <em>{{ data.time }}</em>
           </li>
         </ul>
       </q-collapsible>
     </div>
     <br>
-    <div>
-      {{ this.$store.state.myValue }}
-      {{ this.$store.state.user.Users["0"].username }}
-    </div>
-    <br>
-    <button @click="decrement" type="button" name="button" class="secondary width-1of5">-</button>
-    <button @click="increment" type="button" name="button" class="primary width-1of5">+</button>
+
 </div>
 </template>
 
@@ -78,5 +77,11 @@ export default {
   .bod {
     padding-left: 25px;
     padding-right: 25px;
+  }
+  li {
+    list-style-type: none;
+  }
+  .bg {
+    background-color: #d8e7ff;
   }
 </style>
