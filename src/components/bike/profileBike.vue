@@ -2,32 +2,19 @@
   <div class="bod">
     <h1>Profile</h1>
     <!-- <li v-for="info in user"> {{ info.username }}</li> -->
-    <!-- <div>
-      <div class="row">
-        <img src="http://placehold.it/200x200" alt="">
-        <div class="auto">
-
-        </div>
-      </div>
-      <div class="row">
-        <div class="auto">Second column</div>
-        <div class="auto">Third column</div>
-        <div class="auto">First column</div>
-      </div>
-    </div> -->
-    <div class="card bod">
-      <div class="item two-lines">
-        <img class="item-primary" src="http://placehold.it/200x200">
+    <div class="card">
+      <div class="item two-lines bod">
+        <img style="margin-left:10px" class="item-primary" src="http://placehold.it/200x200">
         <div class="item-content">
-          <div v-model="user"> {{ this.user['0'].username }} </div>
-          <div v-model="user"> {{ this.user['0'].email }} </div>
+          <div v-model="user"> {{ user.username }} </div>
+          <div v-model="user"> {{ user.email }} </div>
         </div>
       </div>
       <img src="http://lorempixel.com/1000/300/sports/">
-      <div class="card-content" v-model="user">
-        {{ this.user['0'].address }} | {{ this.user['0'].phone }}
+      <div class="card-content bod" v-model="user">
+        {{ user.address }} | {{ user.phone }}
       </div>
-      <div class="card-actions">
+      <div class="card-actions bod">
         <div class="text-primary">
           <i>thumb_up</i> 11k likes
         </div>
@@ -35,70 +22,55 @@
           <i>mode_comment</i> 8 comments
         </div>
         <div class="auto"></div>
-        <div class="text-grey-6" v-model="time">
-          {{ time }}
-        </div>
       </div>
     </div>
     <p>Help log</p>
     <div class="list">
-      <q-collapsible icon="explore" label="First">
-        <div>
-          Content
-        </div>
-      </q-collapsible>
-      <q-collapsible icon="perm_identity" label="Second">
-        <div>
-          Content
-        </div>
-      </q-collapsible>
-      <q-collapsible icon="shopping_cart" label="Third">
-        <div>
-          Content
-        </div>
+      <q-collapsible
+        icon="explore"
+        label="Help History"
+        v-for="data in helps"> {{ data.description }}
+        <ul>
+          <li>
+            {{ data.day }}
+          </li>
+          <li>
+            {{ data.time }}
+          </li>
+        </ul>
       </q-collapsible>
     </div>
     <br>
-
-    <!-- <div>
+    <div>
       {{ this.$store.state.myValue }}
+      {{ this.$store.state.user.Users["0"].username }}
     </div>
     <br>
     <button @click="decrement" type="button" name="button" class="secondary width-1of5">-</button>
-    <button @click="increment" type="button" name="button" class="primary width-1of5">+</button> -->
+    <button @click="increment" type="button" name="button" class="primary width-1of5">+</button>
 </div>
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   data () {
     return {
-      time: '',
-      user: []
+      helps: this.$store.state.help.AllHelpsAtUser,
+      user: this.$store.state.user.Users['0']
     }
   },
   mounted () {
-    axios.get('http://localhost:3000/users')
-    .then((response) => {
-      this.user = response.data.Users
-    })
-    if (new Date().getHours() > 12) {
-      this.time = new Date().getHours() - 12 + ' PM'
-    }
-    else {
-      this.time = new Date().getHours() + ' AM'
+    this.$store.dispatch('bicycleUser')
+    this.$store.dispatch('userHelps')
+  },
+  methods: {
+    increment () {
+      this.$store.dispatch('increment')
+    },
+    decrement () {
+      this.$store.dispatch('decrement')
     }
   }
-  // methods: {
-  //   increment () {
-  //     this.$store.dispatch('increment')
-  //   },
-  //   decrement () {
-  //     this.$store.dispatch('decrement')
-  //   }
-  // }
 }
 </script>
 

@@ -12,7 +12,7 @@ import axios from 'axios'
 const VueGoogleMaps = require('vue2-google-maps')
 import router from './router'
 
-import store from './store/store.js'
+import store from './store'
 
 Vue.use(Quasar) // Install Quasar Framework
 Vue.use(axios)

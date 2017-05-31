@@ -16,6 +16,9 @@
           :clickable="true"
           :draggable="true"
           :scroll="false"
+          :zoomControl= "false"
+          :scaleControl= "false"
+          :scrollwheel= "false"
           @click="center=m.position"
         ></gmap-marker>
       </gmap-map>
